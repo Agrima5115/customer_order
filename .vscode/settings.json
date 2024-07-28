@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": "C:/msys64/mingw64/bin/python.exe",
+    "python.linting.enabled": true,
+    "python.testing.unittestEnabled": true,
+    "python.testing.unittestArgs": [
+      "-v",
+      "test_app.py"
+    ]
+  }
+  

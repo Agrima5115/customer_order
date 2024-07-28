@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:/msys64/mingw64/bin/python.exe",
+    "python.pythonPath": "C:/Users/agrim/AppData/Local/Programs/Python/Python312/python.exe",
     "python.linting.enabled": true,
     "python.testing.unittestEnabled": true,
     "python.testing.unittestArgs": [

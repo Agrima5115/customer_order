@@ -42,4 +42,4 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest --ignore=test_app.py
+        

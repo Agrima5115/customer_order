@@ -23,16 +23,19 @@ def process_orders(csv_file):
             # Update total revenue by month, product, and customer
             total_revenue_by_month[month] += product_revenue
             total_revenue_by_product[row['product_name']] += product_revenue
-            total_revenue_by_customer[row['customer_id']] += product_revenue
+            total_revenue_by_customer[int(row['customer_id'])] += product_revenue
+    
+    # Convert defaultdicts to sorted lists of tuples
+    total_revenue_by_month = sorted(total_revenue_by_month.items())
+    total_revenue_by_product = sorted(total_revenue_by_product.items())
+    total_revenue_by_customer = sorted(total_revenue_by_customer.items(), key=lambda x: -x[1])
     
     # Return the accumulated revenues by month, product, and customer
     return total_revenue_by_month, total_revenue_by_product, total_revenue_by_customer
 
 def top_10_customers(total_revenue_by_customer):
-    # Sort customers by revenue in descending order
-    sorted_customers = sorted(total_revenue_by_customer.items(), key=lambda x: x[1], reverse=True)
     # Select the top 10 customers based on revenue
-    top_10 = sorted_customers[:10]
+    top_10 = total_revenue_by_customer[:10]
     return top_10
 
 def main():
@@ -42,17 +45,17 @@ def main():
     
     # Print total revenue by month
     print("Total revenue by month:")
-    for month, revenue in total_revenue_by_month.items():
+    for month, revenue in total_revenue_by_month:
         print(f"{month}: ${revenue:.2f}")
     
     # Print total revenue by product
     print("\nTotal revenue by product:")
-    for product, revenue in total_revenue_by_product.items():
+    for product, revenue in total_revenue_by_product:
         print(f"{product}: ${revenue:.2f}")
     
     # Print total revenue by customer
     print("\nTotal revenue by customer:")
-    for customer_id, revenue in total_revenue_by_customer.items():
+    for customer_id, revenue in total_revenue_by_customer:
         print(f"Customer ID {customer_id}: ${revenue:.2f}")
     
     # Print top 10 customers by revenue

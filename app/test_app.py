@@ -1,7 +1,6 @@
 import unittest
 import os
-import pandas as pd
-from app import process_orders
+from app import process_orders, top_10_customers
 
 class TestApp(unittest.TestCase):
     def setUp(self):
@@ -26,40 +25,40 @@ class TestApp(unittest.TestCase):
     
     def test_process_orders(self):
         # Define the expected results for monthly, product, and customer revenues
-        expected_monthly_revenue = pd.Series({
-            pd.Timestamp('2023-07-31'): 599.97,
-            pd.Timestamp('2023-11-30'): 1599.98,
-            pd.Timestamp('2023-12-31'): 249.99,
-            pd.Timestamp('2024-02-29'): 799.98,
-            pd.Timestamp('2024-03-31'): 1299.99,
-        }).sort_index()
+        expected_monthly_revenue = [
+            ('2023-07', 599.97),
+            ('2023-11', 1599.98),
+            ('2023-12', 249.99),
+            ('2024-02', 799.98),
+            ('2024-03', 1299.99),
+        ]
         
-        expected_product_revenue = pd.Series({
-            'Headphones': 599.97,
-            'Laptop': 1299.99,
-            'Smartphone': 1599.98,
-            'Smartwatch': 249.99,
-            'Tablet': 799.98,
-        }).sort_index()
+        expected_product_revenue = [
+            ('Headphones', 599.97),
+            ('Laptop', 1299.99),
+            ('Smartphone', 1599.98),
+            ('Smartwatch', 249.99),
+            ('Tablet', 799.98),
+        ]
         
-        expected_customer_revenue = pd.Series({
-            101: 1849.97,
-            123: 1299.99,
-            156: 599.97,
-            187: 799.98,
-        }).sort_index()
+        expected_customer_revenue = [
+            (101, 1849.97),
+            (123, 1299.99),
+            (187, 799.98),
+            (156, 599.97),
+        ]
 
-        expected_top_10_customers = expected_customer_revenue.sort_values(ascending=False).head(10)
+        expected_top_10_customers = expected_customer_revenue
         
         # Call the process_orders function and get the results
         monthly_revenue, product_revenue, customer_revenue = process_orders(self.csv_file)
-        top_10_customers = customer_revenue.sort_values(ascending=False).head(10)
+        top_10_customers_result = top_10_customers(customer_revenue)
         
         # Assert that the calculated results match the expected results
-        pd.testing.assert_series_equal(monthly_revenue.sort_index(), expected_monthly_revenue)
-        pd.testing.assert_series_equal(product_revenue.sort_index(), expected_product_revenue)
-        pd.testing.assert_series_equal(customer_revenue.sort_index(), expected_customer_revenue)
-        pd.testing.assert_series_equal(top_10_customers.sort_index(), expected_top_10_customers)
+        self.assertEqual(monthly_revenue, expected_monthly_revenue)
+        self.assertEqual(product_revenue, expected_product_revenue)
+        self.assertEqual(customer_revenue, expected_customer_revenue)
+        self.assertEqual(top_10_customers_result, expected_top_10_customers)
 
 if __name__ == "__main__":
     unittest.main()

@@ -12,7 +12,6 @@ This application processes customer orders from a CSV file and provides insights
 ## Tech Stack
 
 - Python
-- Pandas
 - Docker
 - AWS EC2
 - PuTTY

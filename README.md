@@ -124,14 +124,14 @@ This application processes customer orders from a CSV file and provides insights
 
 ## Screenshots
 
-<img src="https://github.com/user-attachments/assets/6e246ecb-9326-40df-8d08-1e321d582814" alt="ss1" width="400" height="300">
-<img src="https://github.com/user-attachments/assets/5556b6d6-8d5f-4158-a066-641b07363b99" alt="ss2" width="400" height="300">
-<img src="https://github.com/user-attachments/assets/9ddba210-d1ac-42bc-b69d-12ba33d750d3" alt="ss3" width="400" height="300">
-<img src="https://github.com/user-attachments/assets/8f568214-75b2-442f-b263-c8b49886f965" alt="ss4" width="400" height="300">
-<img src="https://github.com/user-attachments/assets/22b8448b-5f78-44b1-acbe-38e6858bde69" alt="ss5" width="400" height="300">
-<img src="https://github.com/user-attachments/assets/af56ebd6-c923-48d8-9a59-658369377d13" alt="ss6" width="400" height="300">
-<img src="https://github.com/user-attachments/assets/f6b0ecc2-4d1f-4ba2-a54b-404849f7484c" alt="ss7" width="400" height="300">
-<img src="https://github.com/user-attachments/assets/8c96ecc7-7b85-4134-8dfe-a2d791bf7de2" alt="ss8" width="400" height="300">
+<img src="https://github.com/user-attachments/assets/6e246ecb-9326-40df-8d08-1e321d582814" alt="ss1" width="400" height="300" style="margin-right: 20px;">
+<img src="https://github.com/user-attachments/assets/5556b6d6-8d5f-4158-a066-641b07363b99" alt="ss2" width="400" height="300" style="margin-right: 20px;">
+<img src="https://github.com/user-attachments/assets/9ddba210-d1ac-42bc-b69d-12ba33d750d3" alt="ss3" width="400" height="300" style="margin-right: 20px;">
+<img src="https://github.com/user-attachments/assets/8f568214-75b2-442f-b263-c8b49886f965" alt="ss4" width="400" height="300" style="margin-right: 20px;">
+<img src="https://github.com/user-attachments/assets/22b8448b-5f78-44b1-acbe-38e6858bde69" alt="ss5" width="400" height="300" style="margin-right: 20px;">
+<img src="https://github.com/user-attachments/assets/af56ebd6-c923-48d8-9a59-658369377d13" alt="ss6" width="400" height="300" style="margin-right: 20px;">
+<img src="https://github.com/user-attachments/assets/f6b0ecc2-4d1f-4ba2-a54b-404849f7484c" alt="ss7" width="400" height="300" style="margin-right: 20px;">
+<img src="https://github.com/user-attachments/assets/8c96ecc7-7b85-4134-8dfe-a2d791bf7de2" alt="ss8" width="400" height="300" style="margin-right: 20px;">
 
 ## Project Structure
 ```sh
